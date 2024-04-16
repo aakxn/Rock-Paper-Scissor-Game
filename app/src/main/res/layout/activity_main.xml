@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="resetbutton"
-    android:tag="2"
+    android:onClick="resetButton"
     tools:context=".MainActivity">
 
 
@@ -39,14 +38,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/scoretextview"
+        android:id="@+id/scoreTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/_0_0"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
@@ -54,53 +51,53 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/you"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="@+id/scoretextview"
-        app:layout_constraintEnd_toStartOf="@+id/scoretextview" />
+        app:layout_constraintBottom_toBottomOf="@+id/scoreTextView"
+        app:layout_constraintEnd_toStartOf="@+id/scoreTextView" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/TextView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/comp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="@+id/scoretextview"
-        app:layout_constraintStart_toEndOf="@+id/scoretextview" />
+        app:layout_constraintBottom_toBottomOf="@+id/scoreTextView"
+        app:layout_constraintStart_toEndOf="@+id/scoreTextView" />
 
     <TextView
         android:id="@+id/userSelectionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/rock"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <TextView
-        android:id="@+id/compSelectionTextiew"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/paper"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
-        android:id="@+id/winlosttietextview"
+        android:id="@+id/compSelectionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="paper"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        app:layout_constraintStart_toEndOf="@+id/TextView5"
+        app:layout_constraintTop_toBottomOf="@+id/TextView5" />
+
+    <TextView
+        android:id="@+id/winLostTieTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:text="@string/winlosttietextview"
+        android:text="winLostTieTextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scoretextview" />
+        app:layout_constraintTop_toBottomOf="@+id/scoreTextView" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -109,12 +106,14 @@
         android:layout_marginTop="64dp"
         android:backgroundTint="@color/white"
         android:onClick="rpsButtonSelected"
+        android:tag="1"
+
+
         android:scaleType="fitCenter"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/winlosttietextview"
-        app:srcCompat="@drawable/rock" />
+        app:layout_constraintTop_toBottomOf="@+id/winLostTieTextView"
+        app:srcCompat="@drawable/rock"
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -127,6 +126,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageButton3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
+        android:tag="2"
         app:srcCompat="@drawable/paper" />
 
     <ImageButton
@@ -136,10 +136,12 @@
         android:backgroundTint="#FDFCFC"
         android:onClick="rpsButtonSelected"
         android:scaleType="fitCenter"
+        android:tag="3"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageButton2"
-        app:srcCompat="@drawable/scissor" />
+        app:srcCompat="@drawable/scissor"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
